@@ -1,52 +1,76 @@
 # Title
 Smart Budget Planner
 
-# Overview
-Smart Budget Planner is an AI driven personal finance web application that predicts monthly savings potential and classifies savings behavior.
+# Project Overview
+This project is a Streamlit based personal finance planning application. The system collects user profile, income, expenses, and goals, then produces financial summaries and model driven insights. The application focuses on clarity, guided input, and safe defaults when users complete only part of the flow.
 
-The system uses supervised machine learning models trained on demographic and expense data. A Streamlit interface guides users through a structured onboarding flow, collects financial inputs with explanations, and presents predictions with visual feedback.
+# User Functions
+Profile setup
+Enter age, employment status, and household context.
+Student selection switches income interpretation to monthly allowance.
 
-This project is designed to be practical, interpretable, and extensible. It is suitable for academic work, portfolio demonstration, or as a foundation for a real money tracking application.
+# Income input
+Enter salary, allowance, or other income sources.
+Helper text explains each field and expected units.
 
-# Features
-- Multi step guided onboarding flow
-- Conditional inputs for students and working users
-- Contextual helpers explaining each financial field
-- Robust handling of partial or missing inputs
-- Monthly savings amount prediction
-- Savings potential level classification
-- Expense breakdown visualizations
-- Feature engineered financial ratios
-- Clean separation between ML and UI code
-- Models persisted and reused consistently
+# Expense input
+Enter fixed and variable expenses.
+Helpers describe common examples such as rent, food, transport, and subscriptions.
 
-# Machine Learning Approach
-Regression Task
-Predicts estimated monthly savings potential.
+# Goal setting
+Define savings goals and time horizon.
+Helpers explain realistic ranges and interpretation.
 
-Classification Task
-Predicts savings behavior level. Low, Medium, or High.
+# Results and analysis
+View computed summaries, averages, and model outputs.
+Results remain stable even if some sections are incomplete.
 
-# Models
-- Random Forest Regressor
-- Random Forest Classifier
+# Helper System
+Each input field includes inline helper descriptions.
+Helpers explain purpose, units, and typical values.
+This mirrors the original prototype behavior.
 
-Why Random Forest
-- Strong performance on tabular data
-- Handles non linear relationships
-- Resistant to overfitting
-- Feature importance available for explainability
+# Usage Instructions
+Clone the repository.
+Install required Python packages.
+Run the Streamlit app.
 
-# Feature Engineering
-- Total monthly expenses
-- Expense to income ratio
-- Essential expense ratio
-- Lifestyle expense ratio
-- Dependents to income ratio
-- Savings goal gap
+# Open the app in a browser.
+Complete sections in order.
+Profile
+Income
+Expenses
+Goals
 
-Data Leakage Prevention
-- Classification target derived after feature construction
-- Leakage features removed from classification inputs
-- Separate pipelines for regression and classification
+# Navigate to Results to view outputs.
+Partial completion still produces safe results.
 
+# Input Constraints
+Numeric fields accept non negative values only.
+Monthly values use consistent currency units.
+Age must fall within a realistic human range.
+Student mode interprets income as allowance.
+
+# Data Handling
+No user data is stored permanently.
+Sample data exists only for demonstration.
+Training data and large datasets remain excluded from version control.
+
+# Error Handling
+Missing inputs fall back to defaults.
+Session state keys initialize before access.
+Invalid values trigger inline warnings and require correction.
+
+# Project Structure
+app.py handles application entry.
+ui folder contains section specific UI files.
+models folder stores trained models if present.
+data folder holds optional sample data only.
+
+# Future Enhancements
+Persistent storage support.
+Improved model explainability views.
+Additional financial scenarios and profiles.
+
+# Author
+Developed by Louis Chua Khai Yi
