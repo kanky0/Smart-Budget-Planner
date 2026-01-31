@@ -33,8 +33,11 @@ Predicts savings behavior level. Low, Medium, or High.
 
 Why Random Forest
 • Strong performance on tabular data
+
 • Handles non linear relationships
+
 • Resistant to overfitting
+
 • Feature importance available for explainability
 
 Feature Engineering
